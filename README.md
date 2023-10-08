@@ -1,7 +1,8 @@
 # Boneworks Provolver
 
 <img src="https://cdn.akamai.steamstatic.com/steam/apps/823500/header.jpg">
-https://cdn.akamai.steamstatic.com/steam/apps/256769510/movie480.webm?t=1576000727
+
+https://github.com/Astienth/Boneworks_Protube/assets/11942434/c54d2c4a-d3d6-420a-a785-ffa68a7cd0d7
 
 # Description
 
@@ -11,9 +12,7 @@ This mod adds provolver support to the game
 
 1. **Download** [MelonLoader.Installer](https://github.com/HerpDerpinstine/MelonLoader/releases/latest/download/MelonLoader.Installer.exe) and **Run**.
 
-2. Press **Select** button and **choose the .exe file**. You can find the .exe file location
-	- for Steam: C:\Program Files (x86)\Steam\steamapps\common\BONEWORKS\
-	- for Oculus Rift: C:\Program Files\Oculus\Software\Software\BONEWORKS\
+2. Press **Select** button and **choose the game .exe file**
 
 3. Select melonloader 0.5.7 and click on Install
 
