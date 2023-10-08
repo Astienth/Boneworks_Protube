@@ -1,12 +1,15 @@
-# Boneworks Provolver
-
 <img src="https://cdn.akamai.steamstatic.com/steam/apps/823500/header.jpg">
 
 https://github.com/Astienth/Boneworks_Protube/assets/11942434/c54d2c4a-d3d6-420a-a785-ffa68a7cd0d7
 
 # Description
 
-This mod adds provolver support to the game
+This mod adds provolver support to the game.
+
+# This mod is compatible with the bHaptics mod
+
+**If you already installed the bhaptics mod then just extract the zip content into the “STEAM\steamapps\common\BONEWORKS\BONEWORKS\Mods” folder**
+
 
 # Installation
 
@@ -16,9 +19,19 @@ This mod adds provolver support to the game
 
 3. Select melonloader 0.5.7 and click on Install
 
-4. **Download** [Mod zip file](https://github.com/Astienth/Provolver_SuperHot/releases/download/1.0/Provolver_SuperHot.zip) and **extract** into \BONEWORKS\Mods\
+4. **Run the game**
 
-5. Turn your provolver on and run the game
+5. **Download** [ModThatIsNotMod](https://boneworks.thunderstore.io/package/download/gnonme/ModThatIsNotMod/0.2.2/) 
+
+6. Extract it directly in your “STEAM\steamapps\common\BONEWORKS\BONEWORKS” folder.
+
+7. After that extract the contents of [BoneworksProtube.zip](https://github.com/Astienth/Boneworks_Protube/releases/download/1.0/BoneworksProtube.zip) inside your “STEAM\steamapps\common\BONEWORKS\BONEWORKS\Mods” directory.
+
+This is what the Mods folder should look like : 
+![Capture](https://github.com/Astienth/Boneworks_Protube/assets/11942434/7623dd2d-6984-4163-bfd8-2987ef7060b3)
+
+
+8. Turn your provolver on and run the game
 
 # Configuration
 
