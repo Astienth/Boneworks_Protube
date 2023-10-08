@@ -28,7 +28,8 @@ This mod adds provolver support to the game.
 7. After that extract the contents of [BoneworksProtube.zip](https://github.com/Astienth/Boneworks_Protube/releases/download/1.0/BoneworksProtube.zip) inside your “STEAM\steamapps\common\BONEWORKS\BONEWORKS\Mods” directory.
 
 This is what the Mods folder should look like : 
-![Capture](https://github.com/Astienth/Boneworks_Protube/assets/11942434/7623dd2d-6984-4163-bfd8-2987ef7060b3)
+
+<img src="https://github.com/Astienth/Boneworks_Protube/assets/11942434/7623dd2d-6984-4163-bfd8-2987ef7060b3">
 
 
 8. Turn your provolver on and run the game
