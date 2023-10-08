@@ -9,6 +9,7 @@ using StressLevelZero.Props.Weapons;
 using ModThatIsNotMod;
 using UnityEngine;
 using Object = UnityEngine.Object;
+using System.Linq;
 
 namespace BoneWorksProtube
 {
@@ -19,6 +20,7 @@ namespace BoneWorksProtube
         private MelonPreferences_Category config;
         public static bool leftHanded = false;
         private GameObject player;
+        public string[] sidearms = { "tool_stapler", "handgun_1911", "handgun_Eder22", "handgun_P350" };
 
         public override void OnApplicationStart()
         {
@@ -108,38 +110,42 @@ namespace BoneWorksProtube
                 int instanceId = ((Object)gun).GetInstanceID();
                 GameObject player = FindPlayer();
                 Gun gunInHand1 = Player.GetGunInHand(Player.rightHand);
-                float kickForce;
                 if ((Object)gunInHand1 != (Object)null && instanceId == ((Object)gunInHand1).GetInstanceID())
                 {
+                    // RIGHT
                     string name = ((Object)gun).name;
-                    kickForce = gun.kickForce;
-                    string str = kickForce.ToString((IFormatProvider)CultureInfo.InvariantCulture);
-                    string logStr = "Player fired right hand gun. Name:" + name + " KickForce: " + str;
-                    MelonLogger.Msg(logStr);
-
-                    // TRIGGER RIGHT HAPTIC 
-                    ForceTubeVRInterface.Kick(210,
-                        (leftHanded && !dualWield)
-                        ? ForceTubeVRChannel.pistol2 : ForceTubeVRChannel.pistol1);
+                    string logStr = "Player fired right hand gun. Name:" + name;
+                    //MelonLogger.Msg(logStr);
+                    handleGunType(name, (leftHanded && !dualWield)
+                    ? ForceTubeVRChannel.pistol2 : ForceTubeVRChannel.pistol1);
                 }
-
+                //LEFT
                 Gun gunInHand2 = Player.GetGunInHand(Player.leftHand);
                 if ((Object)gunInHand2 == (Object)null || instanceId != ((Object)gunInHand2).GetInstanceID())
                     return;
                 
                 string name1 = ((Object)gun).name;
-                kickForce = gun.kickForce;
-                string str1 = kickForce.ToString((IFormatProvider)CultureInfo.InvariantCulture);
-                string logStr1 = "Player fired left hand gun. Name:" + name1 + " KickForce: " + str1;
-                MelonLogger.Msg(logStr1);
-
-                // TRIGGER LEFT HAPTIC
-                ForceTubeVRInterface.Kick(210, 
-                    (leftHanded && !dualWield) 
-                    ? ForceTubeVRChannel.pistol1 : ForceTubeVRChannel.pistol2);
+                string logStr1 = "Player fired left hand gun. Name:" + name1;
+                //MelonLogger.Msg(logStr1);
+                handleGunType(name1, (leftHanded && !dualWield)
+                ? ForceTubeVRChannel.pistol1 : ForceTubeVRChannel.pistol2);
             }
             catch(Exception e) {
                 MelonLogger.Msg("Error gun shoot " + e);
+            }
+        }
+        public void handleGunType(string name, ForceTubeVRChannel channel)
+        {
+            string[] types = name.Split(' ');
+
+            // TRIGGER LEFT HAPTIC
+            if (!sidearms.Contains(types[0]))
+            {
+                ForceTubeVRInterface.Shoot(210, 125, 20f, channel);
+            }
+            else
+            {
+                ForceTubeVRInterface.Kick(210, channel);
             }
         }
     }
